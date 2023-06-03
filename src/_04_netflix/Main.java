@@ -2,23 +2,32 @@ package _04_netflix;
 
 public class Main {
 public static void main(String[] args) {
-	Movie HarryPotter = new Movie("Harry Potter", 4);
-	Movie Twilight = new Movie("Twilight",3);
-	Movie Boring = new Movie("A Very Boring Movie", 1);
-	Movie Annie = new Movie("Annie", 5);
-	Movie SuperMarioBros = new Movie("Super Mario Bros Movie", 3);
-	//make it so you can add methods and start here and yes I wrote this to say what to do when you come back
+	Movie harryPotter = new Movie("Harry Potter", 4);
+	Movie twilight = new Movie("Twilight",2);
+	Movie boring = new Movie("A Very Boring Movie", 1);
+	Movie annie = new Movie("Annie", 5);
+	Movie superMarioBros = new Movie("Super Mario Bros Movie", 3);
+	
+	harryPotter.getTicketPrice();
+	
+	NetflixQueue netflix = new NetflixQueue();
 
-	//getTicketPrice();
+	netflix.addMovie(harryPotter);
+	netflix.addMovie(twilight);
+	netflix.addMovie(boring);
+	netflix.addMovie(annie);
+	netflix.addMovie(superMarioBros);
 	
-	//add it to Netflix Queue thing (I wrote this)
+	netflix.printMovies();
+	netflix.sortMoviesByRating();
 	
-	//print movies to queue (I wrote this)
+	System.out.println("                         ");
 	
-	//then do the best movie is... (I wrote this)
-	//the second best movie is... (I wrote this)
-	//the third best movie is... (I wrote this)
-
 	
+	System.out.println("The best movie is "+ netflix.getBestMovie());
+	System.out.println("The second best movie is " + netflix.get2BestMovie());
+	System.out.println("The third best movie is " + netflix.get3BestMovie());
+	System.out.println("The fourth best movie is " +netflix.get4BestMovie());
+	System.out.println("The fifth best movie is "+ netflix.get5BestMovie());
 }
 }

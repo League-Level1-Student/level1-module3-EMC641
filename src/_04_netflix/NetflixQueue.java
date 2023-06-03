@@ -21,6 +21,23 @@ public class NetflixQueue {
 		return movies.get(0);
 	}
 
+	public Movie get2BestMovie() {
+		this.sortMoviesByRating();
+		return movies.get(1);
+	}
+	public Movie get3BestMovie() {
+		this.sortMoviesByRating();
+		return movies.get(2);
+	}
+	public Movie get4BestMovie() {
+		this.sortMoviesByRating();
+		return movies.get(3);
+	}
+	public Movie get5BestMovie() {
+		this.sortMoviesByRating();
+		return movies.get(4);
+	}
+	
 	/**
 	 * adds a movie to the Netflix Queue
 	 * 
