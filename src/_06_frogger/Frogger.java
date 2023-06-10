@@ -2,10 +2,15 @@ package _06_frogger;
 
 import processing.core.PApplet;
 
-//start on step number 6 and continue there
+//do step number 13 and continue from there
 public class Frogger extends PApplet {
     static final int WIDTH = 844;
     static final int HEIGHT = 600;
+    
+    
+    Car superCar = new Car(100,100, 20, 5);
+    Car dirtyCar = new Car(100,125,20,4);
+    
     
     @Override
     public void settings() {
@@ -14,6 +19,7 @@ public class Frogger extends PApplet {
 
     @Override
     public void setup() {
+
     	
     }
 
@@ -21,9 +27,19 @@ public class Frogger extends PApplet {
     public void draw() {
     	background(0, 150, 255);
     	fill(0, 255, 0);
-    	ellipse(X, Y, 50, 50);
+    	ellipse(X, Y, 80, 80);
     	
-    	 
+    	superCar.display();
+    	dirtyCar.display();
+    	
+    	superCar.moveLeft();
+    	dirtyCar.moveLeft();
+    	
+    	superCar.moveRight();
+    	dirtyCar.moveLeft();
+    	
+    	
+    	
     }
     
     
@@ -47,6 +63,7 @@ public class Frogger extends PApplet {
                 //Frog X position goes left
             }
         }
+        
     }
     
     
