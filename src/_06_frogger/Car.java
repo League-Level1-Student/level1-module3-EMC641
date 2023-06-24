@@ -25,33 +25,47 @@ public class Car extends PApplet {
 	
  void display()
 	  {
+	    rect(844 , 600,  size, 50);
 	    fill(0,255,0);
-	    rect(x , y,  size, 50);
-	    
 	    
 	  }
 
 void moveLeft() {
 	x--;
+	if(x==0) {
+		x=600;
+	}
 }
 
 void moveRight() {
 	x++;
+	
+	if(x==600) {
+		x=0;
+	}
 }
  
-void getX() {
-	
+int getX() {
+	return x;
 }
 
-void getY() {
-	
+int getY() {
+	return y;
 }
 
-void getSize() {
-	
+int getSize() {
+	return size;
 }
 
-
+boolean intersects(Car car) {
+	 if ((y> car.getY() && y < car.getY()+50) &&
+	                (x > car.getX() && x < car.getX()+car.getSize())) {
+	   return true;
+	  }
+	 else  {
+	  return false;
+	 }
+}
 }
   
 

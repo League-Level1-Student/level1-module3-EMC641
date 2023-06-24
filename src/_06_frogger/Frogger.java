@@ -11,7 +11,8 @@ public class Frogger extends PApplet {
     Car superCar = new Car(100,100, 20, 5);
     Car dirtyCar = new Car(100,125,20,4);
     
-    
+    int Y = 300;
+    int X = 400;
     @Override
     public void settings() {
         size(844,600);        
@@ -38,32 +39,39 @@ public class Frogger extends PApplet {
     	superCar.moveRight();
     	dirtyCar.moveLeft();
     	
+    	superCar.intersects(dirtyCar);
     	
+    	if(superCar.intersects(dirtyCar)) {
+    		Y=5;
+    	}
+    	if(dirtyCar.intersects(superCar)) {
+    		Y=5;
+    	}
     	
     }
     
     
-    public void keyPressed()
+   public void keyPressed() {
     {
         if(key == CODED){
             if(keyCode == UP)
             {
-                //Frog Y position goes up
+               Y+=10;
             }
             else if(keyCode == DOWN)
             {
-                //Frog Y position goes down 
+                Y-=10;
             }
             else if(keyCode == RIGHT)
             {
-                //Frog X position goes right
+                X+=10;
             }
             else if(keyCode == LEFT)
             {
-                //Frog X position goes left
+                X-=10;
             }
-        }
         
+        }}
     }
     
     
